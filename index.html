@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Page</title>
     <style>
-        body {
+         body {
             font-family: 'Poppins', sans-serif;
             background: url(sarapnibro.jpg) no-repeat;
   background-size: cover;
@@ -72,23 +72,34 @@
     </style>
 </head>
 <body>
-    <h2>Welcome Back</h2>
-    <form>
-        <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="register-link">
+            <p>Don't have an account? <button onclick="redirectToRegister()">Register here</button></p>
         </div>
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="login-btn">Login</button>
-    </form>
-    <div class="forgot-password">
-        <a href="#">Forgot password?</a>
     </div>
-    <div class="signup-link">
-        New here? <a href="#">Create an account</a>
-    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();  
+            window.location.href = "website.html";  
+        });
+
+        function redirectToRegister() {
+            window.location.href = "registrationimmacry.html"; 
+        }
+    </script>
+
 </body>
 </html>
